@@ -17,18 +17,25 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
 
         buildConfigField("String", "BASE_URL", MAIN_URL)
         buildConfigField("String", "API_KEY", MAIN_API_KEY)
         buildConfigField("String", "DB_NAME", MAIN_DB_NAME)
+
     }
 
     buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -40,6 +47,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // Retrofit for Networking
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
@@ -52,5 +60,8 @@ dependencies {
     implementation "androidx.room:room-rxjava2:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
+
+    // Encrypt DB
+    implementation "net.zetetic:android-database-sqlcipher:$sql_chiper_version"
     androidTestImplementation "androidx.room:room-testing:$room_version"
 }

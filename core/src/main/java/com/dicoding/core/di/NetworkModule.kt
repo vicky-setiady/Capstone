@@ -4,6 +4,7 @@ import com.dicoding.core.BuildConfig
 import com.dicoding.core.data.source.remote.network.IApiService
 import dagger.Module
 import dagger.Provides
+import okhttp3.CertificatePinner
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -18,10 +19,16 @@ import java.util.concurrent.TimeUnit
 class NetworkModule {
     @Provides
     fun provideOkHttpClient(): OkHttpClient {
+        val hostname = "api.github.com"
+        val certificatePinner = CertificatePinner.Builder()
+            .add(hostname, "sha256/k2v657xBsOVe1PQRwOsHsw3bsGT2VzIqz5K+59sNQws=")
+            .build()
+
         return OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             .connectTimeout(120, TimeUnit.SECONDS)
             .readTimeout(120, TimeUnit.SECONDS)
+            .certificatePinner(certificatePinner)
             .build()
     }
 

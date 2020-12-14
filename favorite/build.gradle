@@ -37,6 +37,7 @@ android {
 dependencies {
     implementation project(":app")
     implementation project(":core")
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // View Model Automatic Provider
     implementation "androidx.activity:activity-ktx:$activity_ktx_version"

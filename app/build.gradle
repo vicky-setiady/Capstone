@@ -24,8 +24,12 @@ android {
     }
 
     buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -41,10 +45,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation project(":core")
-
-    // Support Multi Dex
-    implementation "androidx.multidex:multidex:$multidex_version"
 
     // View Model Automatic Provider
     implementation "androidx.activity:activity-ktx:$activity_ktx_version"
