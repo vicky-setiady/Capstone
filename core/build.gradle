@@ -23,6 +23,10 @@ android {
         buildConfigField("String", "DB_NAME", MAIN_DB_NAME)
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
     buildTypes {
         release {
             minifyEnabled false
