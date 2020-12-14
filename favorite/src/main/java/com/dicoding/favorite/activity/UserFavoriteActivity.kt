@@ -61,7 +61,13 @@ class UserFavoriteActivity : BaseActivity() {
 
     override fun setupObserver() {
         userFavoriteViewModel.mMutableLiveDataUserList.observe(this, {
-            userAdapter.setData(it)
+            if(it == null){
+                showInformation(true)
+            }else if(it.isEmpty()){
+                showInformation(true)
+            }else{
+                userAdapter.setData(it)
+            }
         })
     }
 }
