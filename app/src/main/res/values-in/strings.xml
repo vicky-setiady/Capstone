@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Capstone</string>
+
+    <!--Content Description-->
+    <string name="user_favorite_content_description">Tombol Favorit Pengguna</string>
+    <string name="user_image_content_description">Foto Profil Pengguna</string>
+    <string name="information_image_content_description">Foto Informasi</string>
+
+    <!--Global-->
+    <string name="search_hint">Cari disini…</string>
+    <string name="favorite">Favorit</string>
+    <string name="setting">Pengaturan</string>
+    <string name="share">Bagikan</string>
+    <string name="empty_list">Data Kosong</string>
+    <string name="general_error_toast">Gagal mendapatkan data</string>
+    <string name="error_400_toast">Gagal mendapatkan data karena permintaan buruk</string>
+    <string name="error_401_toast">Gagal mendapatkan data karena permintaan tidak dapat di otoriasi</string>
+    <string name="error_403_toast">Gagal mendapatkan data karena permintaan dilarang</string>
+    <string name="error_404_toast">Gagal mendapatkan data karena permintaan tidak ditemukan</string>
+    <string name="error_500_toast">Gagal mendapatkan data karena terjadi kesalahan pada server</string>
+
+    <!--User Detail Activity-->
+    <string name="user_detail_repository_text">Penyimpanan</string>
+    <string name="user_detail_follower_text">Pengikut</string>
+    <string name="user_detail_following_text">Mengikuti</string>
+
+    <!--User Favorite Activity-->
+    <string name="user_favorite_title">Favorit</string>
+</resources>

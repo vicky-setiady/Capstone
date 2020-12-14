@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Capstone</string>
+
+    <!--Content Description-->
+    <string name="user_favorite_content_description">User Favorite Button</string>
+    <string name="user_image_content_description">User Profile Image</string>
+    <string name="information_image_content_description">Information Image</string>
+
+    <!--Global-->
+    <string name="search_hint">Search here…</string>
+    <string name="favorite">Favorite</string>
+    <string name="setting">Settings</string>
+    <string name="share">Share</string>
+    <string name="empty_list">The Data is Empty</string>
+    <string name="general_error_toast">Failed to get data</string>
+    <string name="error_400_toast">Failed to get data because of bad request</string>
+    <string name="error_401_toast">Failed to get data because of unauthorized request</string>
+    <string name="error_403_toast">Failed to get data because of forbidden request</string>
+    <string name="error_404_toast">Failed to get data because of request not found</string>
+    <string name="error_500_toast">Failed to get data because of server error</string>
+
+    <!--User Detail Activity-->
+    <string name="user_detail_repository_text">Repository</string>
+    <string name="user_detail_follower_text">Follower</string>
+    <string name="user_detail_following_text">Following</string>
+
+    <!--User Favorite Activity-->
+    <string name="user_favorite_title">Favorite</string>
+
+</resources>
