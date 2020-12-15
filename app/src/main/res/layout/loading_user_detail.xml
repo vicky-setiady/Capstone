@@ -1,51 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.facebook.shimmer.ShimmerFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.userdetail.UserDetailActivity">
-
-    <include
-        android:id="@+id/progress_bar"
-        layout="@layout/loading_user_detail"
-        android:visibility="gone" />
+    android:visibility="visible"
+    app:shimmer_auto_start="true">
 
     <LinearLayout
-        android:id="@+id/ll_information"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="gone"
-        tools:ignore="UseCompoundDrawables">
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="240dp"
-            android:layout_height="240dp"
-            app:lottie_autoPlay="true"
-            app:lottie_fileName="empty-state.json"
-            app:lottie_loop="true" />
-
-        <TextView
-            android:id="@+id/tv_information"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_x3"
-            android:ellipsize="end"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
-        android:orientation="vertical"
-        android:visibility="visible">
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -54,12 +19,13 @@
             android:layout_marginEnd="@dimen/dimen_x2">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/iv_photo_user"
+                android:id="@+id/iv_photo_user_placeholder"
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_centerVertical="true"
                 android:layout_marginTop="@dimen/dimen_x1"
                 android:layout_marginBottom="@dimen/dimen_x1"
+                android:background="@color/colorAccent"
                 android:contentDescription="@string/user_image_content_description"
                 app:civ_border_color="@color/colorWhite"
                 app:civ_border_width="1dp"
@@ -71,47 +37,53 @@
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/dimen_x2"
                 android:layout_marginEnd="@dimen/dimen_x2"
-                android:layout_toEndOf="@id/iv_photo_user"
-                android:layout_toStartOf="@+id/btn_favorite"
+                android:layout_toStartOf="@+id/btn_favorite_placeholder"
+                android:layout_toEndOf="@id/iv_photo_user_placeholder"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
                     android:ellipsize="end"
-                    android:textColor="@color/colorWhite"
+                    android:text="Testing User Github"
+                    android:textColor="@color/colorAccent"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
-                    android:id="@+id/tv_company"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_half"
+                    android:background="@color/colorAccent"
                     android:ellipsize="end"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="14sp" />
+                    android:text="Indonesia"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
-                    android:id="@+id/tv_location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_half"
+                    android:background="@color/colorAccent"
                     android:ellipsize="end"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="14sp" />
+                    android:text="Google. Inc"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    tools:ignore="HardcodedText" />
 
             </LinearLayout>
 
             <ImageButton
-                android:id="@+id/btn_favorite"
+                android:id="@+id/btn_favorite_placeholder"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:background="@color/colorPrimary"
-                android:contentDescription="@string/favorite"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"/>
+                android:layout_centerVertical="true"
+                android:background="@color/colorAccent"
+                android:contentDescription="@string/favorite" />
 
         </RelativeLayout>
 
@@ -136,20 +108,23 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
                     android:ellipsize="end"
                     android:text="@string/user_detail_repository_text"
-                    android:textColor="@color/colorWhite"
+                    android:textColor="@color/colorAccent"
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/tv_repository"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_half"
+                    android:background="@color/colorAccent"
                     android:ellipsize="end"
-                    android:textColor="@color/colorWhite"
+                    android:text="8000"
+                    android:textColor="@color/colorAccent"
                     android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
 
             </LinearLayout>
 
@@ -163,20 +138,23 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
                     android:ellipsize="end"
                     android:text="@string/user_detail_follower_text"
-                    android:textColor="@color/colorWhite"
+                    android:textColor="@color/colorAccent"
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/tv_follower"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_half"
+                    android:background="@color/colorAccent"
                     android:ellipsize="end"
-                    android:textColor="@color/colorWhite"
+                    android:text="8000"
+                    android:textColor="@color/colorAccent"
                     android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
 
             </LinearLayout>
 
@@ -190,27 +168,29 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
                     android:ellipsize="end"
                     android:text="@string/user_detail_following_text"
-                    android:textColor="@color/colorWhite"
+                    android:textColor="@color/colorAccent"
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/tv_following"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_half"
+                    android:background="@color/colorAccent"
                     android:ellipsize="end"
-                    android:textColor="@color/colorWhite"
+                    android:text="8000"
+                    android:textColor="@color/colorAccent"
                     android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
 
             </LinearLayout>
 
         </LinearLayout>
 
         <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
@@ -218,11 +198,45 @@
             app:tabSelectedTextColor="@color/colorTabIndicator"
             app:tabTextColor="@color/colorWhite" />
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/view_pager"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorWhite" />
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/item_user_placeholder" />
+
+                <include layout="@layout/item_user_placeholder" />
+
+                <include layout="@layout/item_user_placeholder" />
+
+                <include layout="@layout/item_user_placeholder" />
+
+                <include layout="@layout/item_user_placeholder" />
+
+                <include layout="@layout/item_user_placeholder" />
+
+                <include layout="@layout/item_user_placeholder" />
+
+                <include layout="@layout/item_user_placeholder" />
+
+                <include layout="@layout/item_user_placeholder" />
+
+                <include layout="@layout/item_user_placeholder" />
+
+                <include layout="@layout/item_user_placeholder" />
+
+                <include layout="@layout/item_user_placeholder" />
+
+                <include layout="@layout/item_user_placeholder" />
+
+                <include layout="@layout/item_user_placeholder" />
+            </LinearLayout>
+        </ScrollView>
+
     </LinearLayout>
 
-</RelativeLayout>
+</com.facebook.shimmer.ShimmerFrameLayout>

@@ -152,7 +152,7 @@ class UserDetailActivity : BaseActivity() {
             Glide.with(this)
                     .load(it.avatarUrl)
                     .apply(RequestOptions().override(64, 64))
-                    .into(iv_photo)
+                    .into(iv_photo_user)
             tv_name.text = it.name
             tv_company.text = it.company
             tv_location.text = it.location

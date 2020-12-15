@@ -4,6 +4,9 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$app_compat_version"
     implementation "androidx.legacy:legacy-support-v4:$legacy_support_version"
 
+    // Shimmer
+    implementation "com.facebook.shimmer:shimmer:$shimmer_version"
+
     // Live Data
     implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version"
 
@@ -33,4 +36,8 @@ dependencies {
     // Dagger for Dependencies Injection
     implementation "com.google.dagger:dagger:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
+    // Lottie
+    implementation "com.airbnb.android:lottie:$lottie_version"
+
 }

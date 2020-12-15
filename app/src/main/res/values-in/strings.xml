@@ -4,7 +4,6 @@
 
     <!--Content Description-->
     <string name="user_image_content_description">Foto Profil Pengguna</string>
-    <string name="information_image_content_description">Foto Informasi</string>
 
     <!--Global-->
     <string name="search_hint">Cari disini…</string>

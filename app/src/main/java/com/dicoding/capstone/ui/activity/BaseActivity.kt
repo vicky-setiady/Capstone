@@ -49,6 +49,10 @@ abstract class BaseActivity : AppCompatActivity() {
         this.progressBar = progressBar
     }
 
+    override fun onBackPressed() {
+        finishAfterTransition()
+    }
+
     fun enableBackButton() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)

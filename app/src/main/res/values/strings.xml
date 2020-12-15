@@ -4,7 +4,6 @@
 
     <!--Content Description-->
     <string name="user_image_content_description">User Profile Image</string>
-    <string name="information_image_content_description">Information Image</string>
 
     <!--Global-->
     <string name="search_hint">Search here…</string>

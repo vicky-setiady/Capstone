@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.activity.main.MainActivity">
 
     <LinearLayout
@@ -14,18 +15,17 @@
         android:visibility="gone"
         tools:ignore="UseCompoundDrawables">
 
-        <ImageView
-            android:id="@+id/civ_information"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:contentDescription="@string/information_image_content_description"
-            android:src="@mipmap/ic_launcher" />
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="empty-state.json"
+            app:lottie_loop="true" />
 
         <TextView
             android:id="@+id/tv_information"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_x3"
             android:ellipsize="end"
             android:textAlignment="center"
             android:textSize="24sp"
@@ -33,12 +33,9 @@
 
     </LinearLayout>
 
-    <ProgressBar
+    <include
         android:id="@+id/progress_bar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        layout="@layout/loading_user"
         android:visibility="gone" />
 
     <androidx.recyclerview.widget.RecyclerView
