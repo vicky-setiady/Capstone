@@ -3,7 +3,6 @@
     <string name="app_name">Capstone</string>
 
     <!--Content Description-->
-    <string name="user_favorite_content_description">User Favorite Button</string>
     <string name="user_image_content_description">User Profile Image</string>
     <string name="information_image_content_description">Information Image</string>
 

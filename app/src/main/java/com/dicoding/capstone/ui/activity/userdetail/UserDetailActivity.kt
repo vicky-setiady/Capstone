@@ -44,7 +44,7 @@ class UserDetailActivity : BaseActivity() {
         enableBackButton()
         setZeroToolbarElevation()
         setToolbarTitle(getUsername())
-        userDetailViewModel.fetchUserDetail(getUsername())
+        userDetailViewModel.fetchUserDetail(getUsername(), this)
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -112,7 +112,7 @@ class UserDetailActivity : BaseActivity() {
                         sourceStatus.data?.let {
                             setData(it)
                             showLoading(false)
-                            userDetailViewModel.getUserEntityById(it.id)
+                            userDetailViewModel.getUserEntityById(it.id, this)
                         }
                     }
                     is SourceStatus.Fail -> {

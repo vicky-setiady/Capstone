@@ -36,7 +36,7 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         (application as BaseApplication).appComponent.inject(this)
         super.onCreate(savedInstanceState)
-        mainViewModel.fetchUserList()
+        mainViewModel.fetchUserList(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -49,7 +49,7 @@ class MainActivity : BaseActivity() {
         searchView.queryHint = resources.getString(R.string.search_hint)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
-                mainViewModel.fetchUserListBySearch(query)
+                mainViewModel.fetchUserListBySearch(query, this@MainActivity)
                 return true
             }
 
@@ -65,7 +65,7 @@ class MainActivity : BaseActivity() {
             }
 
             override fun onMenuItemActionCollapse(p0: MenuItem?): Boolean {
-                mainViewModel.fetchUserList()
+                mainViewModel.fetchUserList(this@MainActivity)
                 return true
             }
 

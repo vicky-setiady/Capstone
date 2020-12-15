@@ -11,6 +11,7 @@ import dagger.Module
 @Module
 abstract class AppModule {
 
+    @Suppress("unused")
     @Binds
     abstract fun provideUserUseCase(userUseCase: UserUseCase): IUserUseCase
 

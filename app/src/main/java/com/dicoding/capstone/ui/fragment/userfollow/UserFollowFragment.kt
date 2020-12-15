@@ -41,7 +41,7 @@ class UserFollowFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        userFollowViewModel.fetchUserList()
+        userFollowViewModel.fetchUserList(requireActivity() as BaseActivity)
     }
 
     override fun setupData() {

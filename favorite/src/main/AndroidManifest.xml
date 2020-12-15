@@ -6,7 +6,8 @@
 
     <dist:module
         dist:instant="false"
-        dist:title="@string/user_favorite_title">
+        dist:title="@string/user_favorite_title"
+        tools:ignore="ManifestResource">
         <dist:delivery>
             <dist:install-time />
         </dist:delivery>

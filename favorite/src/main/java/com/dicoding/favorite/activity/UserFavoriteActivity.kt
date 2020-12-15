@@ -34,8 +34,8 @@ class UserFavoriteActivity : BaseActivity() {
             .inject(this)
         super.onCreate(savedInstanceState)
         enableBackButton()
-        setToolbarTitle(resources.getString(R.string.user_favorite_title))
-        userFavoriteViewModel.getUserFavoriteList()
+        setToolbarTitle(resources.getString(R.string.favorite_title))
+        userFavoriteViewModel.getUserFavoriteList(this)
     }
 
     override fun onSupportNavigateUp(): Boolean {

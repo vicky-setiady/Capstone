@@ -12,6 +12,7 @@ import dagger.Module
 @Module
 abstract class FavoriteModule {
 
+    @Suppress("unused")
     @Binds
     abstract fun provideUserUseCase(userUseCase: UserUseCase): IUserUseCase
 }

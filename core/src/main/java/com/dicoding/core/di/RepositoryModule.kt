@@ -11,6 +11,7 @@ import dagger.Module
 @Module(includes = [NetworkModule::class, DatabaseModule::class])
 abstract class RepositoryModule {
 
+    @Suppress("unused")
     @Binds
     abstract fun provideRepository(sourceRepository: SourceRepository): ISourceRepository
 

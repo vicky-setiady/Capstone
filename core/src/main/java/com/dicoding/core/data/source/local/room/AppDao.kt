@@ -2,7 +2,6 @@ package com.dicoding.core.data.source.local.room
 
 import androidx.room.*
 import com.dicoding.core.data.source.local.entity.UserEntity
-import io.reactivex.Completable
 import io.reactivex.Flowable
 
 /**

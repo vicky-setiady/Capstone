@@ -27,7 +27,6 @@ abstract class BaseActivity : AppCompatActivity() {
     abstract fun setupObserver()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        BaseApplication.setCurrentActivity(this)
         (application as BaseApplication).appComponent.inject(this)
         super.onCreate(savedInstanceState)
         /* Force Disable Dark Theme */
@@ -36,27 +35,6 @@ abstract class BaseActivity : AppCompatActivity() {
         setupData()
         setupComponent()
         setupObserver()
-    }
-
-    override fun onResume() {
-        if (BaseApplication.getCurrentActivity() == null)
-            BaseApplication.setCurrentActivity(this)
-        super.onResume()
-    }
-
-    override fun onPause() {
-        clearCurrentActivity()
-        super.onPause()
-    }
-
-    override fun onDestroy() {
-        clearCurrentActivity()
-        super.onDestroy()
-    }
-
-    private fun clearCurrentActivity() {
-        if (this == BaseApplication.getCurrentActivity())
-            BaseApplication.setCurrentActivity(null)
     }
 
     fun setContent(
